@@ -1,0 +1,10 @@
+mukavuuspalvelu-bot/
+├── server.js            # основной сервер
+├── .env                 # настройки (ключи, порты, номера)
+├── routes/
+│   └── webhook.js       # связь с Tilda
+├── services/
+│   └── whatsapp.js      # отправка сообщений в WhatsApp
+├── utils/
+│   └── logger.js        # логи и отладка
+├── package.json         # список библиотек
