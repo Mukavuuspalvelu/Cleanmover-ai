@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 
 const webhookRoutes = require("./routes/webhook");
-const chatRoute = require("./routes/chat"); // ← если файл chat.js лежит в src/routes
+const chatRoute = require("./routes/chat"); // 
 
 const app = express();
 const port = process.env.PORT || 3000;
