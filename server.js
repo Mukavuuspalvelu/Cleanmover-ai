@@ -1,20 +1,15 @@
 const express = require("express");
-const path = require("path");
-
-const webhookRoutes = require("./routes/webhook");
-const chatRoute = require("./routes/chat");
+const bodyParser = require("body-parser");
 
 const app = express();
-const port = process.env.PORT || 3000;
+const webhookRoutes = require("./routes/webhook");
 
-app.use(express.json());
-app.use(express.static(path.join(__dirname, "public")));
-
+app.use(bodyParser.json());
 app.use("/", webhookRoutes);
-app.use("/", chatRoute);
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
 
 
