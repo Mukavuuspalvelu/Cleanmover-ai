@@ -8,7 +8,7 @@ router.post("/chat", (req, res) => {
     return res.status(400).json({ reply: "❌ Viesti puuttuu." });
   }
 
-  const reply = `✅ Vastaanotettu: "${message}"`;
+  const reply = ` Vastaanotettu: "${message}"`;
   res.json({ reply });
 });
 
