@@ -1,18 +1,17 @@
 const express = require("express");
-const router = express.Router();
+const bodyParser = require("body-parser");
 
-router.post("/chat", (req, res) => {
-  const { message } = req.body;
+const app = express();
+const webhookRoutes = require("./routes/webhook");
 
-  if (!message) {
-    return res.status(400).json({ reply: "❌ Viesti puuttuu." });
-  }
+app.use(bodyParser.json());
+app.use("/", webhookRoutes);
 
-  const reply = ` Vastaanotettu: "${message}"`;
-  res.json({ reply });
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`✅ Server is running on port ${PORT}`);
 });
 
-module.exports = router;
 
 
 
