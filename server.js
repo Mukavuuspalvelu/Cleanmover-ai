@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const app = express();
-const webhookRoutes = require("./routes/webhook");
+const webhookRoutes = require("./routes/chat");
 
 app.use(bodyParser.json());
 app.use("/", webhookRoutes);
